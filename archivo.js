@@ -7,7 +7,7 @@ import readline from 'readline';
 const NUMERO = '1234567890'; // Número de WhatsApp vinculado
 const BOT_NAME = 'ORBIT-MD';
 
-// Crear interfaz de menú en Termux
+// Interfaz de menú en Termux
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
@@ -30,21 +30,23 @@ rl.question('Selecciona una opción (1 o 2): ', (opcion) => {
     }
 });
 
-// Función principal del bot
 async function startBot({ modoQR }) {
     rl.close();
+
+    // Crear o cargar sesión para el número
     const { state, saveCreds } = await useMultiFileAuthState(`auth/${NUMERO}`);
 
+    // Crear cliente de WhatsApp con Baileys
     const client = makeWASocket({
-        auth: state,
-        printQRInTerminal: false
+        auth: state
+        // NO usar printQRInTerminal, ya lo manejamos manualmente
     });
 
-    // Eventos de conexión
+    // Escuchar conexión
     client.ev.on('connection.update', (update) => {
         const { connection, lastDisconnect, qr } = update;
 
-        // Mostrar QR solo si la opción es QR
+        // Mostrar QR en terminal solo si estamos en modo QR
         if (modoQR && qr) {
             console.log('\n🔑 Escanea este QR con WhatsApp:\n');
             qrcode.generate(qr, { small: true });
@@ -67,6 +69,15 @@ async function startBot({ modoQR }) {
         }
     });
 
-    // Guardar sesión automáticamente
+    // Guardar credenciales automáticamente
     client.ev.on('creds.update', saveCreds);
+
+    // Escuchar mensajes entrantes (puedes añadir handler aquí)
+    client.ev.on('messages.upsert', async (m) => {
+        for (const msg of m.messages) {
+            const text = msg?.message?.conversation || '';
+            if (!text) continue;
+            console.log('📩 Mensaje recibido:', text);
+        }
+    });
 }
