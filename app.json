@@ -1,0 +1,7 @@
+{
+  "name": "orbit-md-bot",
+  "description": "Bot ORBIT-MD con menú QR / número",
+  "scripts": { "start": "node archivo.js" },
+  "env": { "NODE_ENV": "production" }
+}
+
