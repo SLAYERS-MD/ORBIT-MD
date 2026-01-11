@@ -1,109 +1,159 @@
-# 🛰️ ORBIT-MD
+# **README.md actualizado para ORBIT-MD**
 
-### WhatsApp Multi-Device Bot | Open Source
+````markdown
+<div align="center">
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Lato&weight=19000&size=14&pause=1000&width=435&lines=%E2%9C%A8+%C2%A1El+equipo+de+ORBIT-MD+te+desea+una+feliz+navidad!" alt="Typing SVG"/></a>
+</div>
 
-> **ORBIT-MD** es un bot de WhatsApp **Multi-Device** desarrollado desde cero con **Node.js** y **Baileys**, diseñado para ofrecer rendimiento, estabilidad y personalización total.
+<p align="center">
+<img src="https://qu.ax/UsZaq.png" alt="ORBIT-MD" width="1000"/>
+</p>
 
+<p align="center">
+<a href="https://github.com/YourUsername"><img title="Followers" src="https://img.shields.io/github/followers/YourUsername?color=red&style=flat-square"></a>
+<a href="https://github.com/YourUsername/ORBIT-MD/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/YourUsername/ORBIT-MD?color=blue&style=flat-square"></a>
+<a href="https://github.com/YourUsername/ORBIT-MD/network/members"><img title="Forks" src="https://img.shields.io/github/forks/YourUsername/ORBIT-MD?color=red&style=flat-square"></a>
+<a href="https://github.com/YourUsername/ORBIT-MD/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/YourUsername/ORBIT-MD?label=Watchers&color=blue&style=flat-square"></a>
+<a href="https://github.com/YourUsername"><img title="Open Source" src="https://badges.frapsoft.com/os/v2/open-source.svg?v=103"></a>
+<a href="https://github.com/YourUsername/ORBIT-MD"><img title="Size" src="https://img.shields.io/github/repo-size/YourUsername/ORBIT-MD?style=flat-square&color=green"></a>
+</p>
 
-## 🚀 Características Principales
+<p align="center">
+<a href="https://chat.whatsapp.com/YOURCHANNEL"><img alt="WhatsApp" src="https://img.shields.io/badge/WhatsApp_Canal-25D366?style=for-the-badge&logo=whatsapp&logoColor=white"/></a>
+</p>
 
-✅ Conexión **WhatsApp Multi-Device**
-✅ Sistema de **comandos y plugins** modular
-✅ Soporte para **grupos y privados**
-✅ Comandos para **admins y owner**
-✅ Respuestas rápidas y automáticas
-✅ Arquitectura limpia y escalable
-✅ Compatible con **Termux / Linux / VPS**
-✅ Preparado para deploy **24/7**
+> [!IMPORTANT]
+> **Este bot contiene contenido adulto y de género específico. Úsalo bajo tu responsabilidad.**
+> **ORBIT-MD ha sido creado para fans del género Yaoi/BL.**
 
-## 🧩 Sistema Modular
+<p align="left">
+<a href="https://github.com/YourUsername" target="_blank"> <img src="https://i.imgur.com/qUBbRnJ.png" alt="ORBIT-MD" width="150"/> </a> 
+ 
+- #### Clona ORBIT-MD [`Aquí`](https://github.com/YourUsername/ORBIT-MD/fork)
+- #### Configura Owners/Administradores [`aqui`](https://github.com/YourUsername/ORBIT-MD/blob/main/config.js)
+- #### Revisa versión de Baileys [`package.json`](https://github.com/YourUsername/ORBIT-MD/blob/main/package.json)
+</p>
 
-ORBIT-MD utiliza un sistema de **plugins** que permite:
+***
 
-* Añadir comandos sin tocar el núcleo
-* Activar o desactivar funciones fácilmente
-* Mantener el bot ordenado y optimizado
-
-Ejemplo:
-
-```
-plugins/
-├── menu.js
-├── ping.js
-├── group.js
-└── owner.js
-```
-
-
-## 📁 Estructura del Proyecto
-
-```
-ORBIT-MD/
-│
-├── .github/
-├── lib/            # Funciones internas
-├── plugins/        # Comandos del bot
-├── storage/        # Base de datos local
-├── tmp/            # Archivos temporales
-│
-├── handler.js      # Gestor de comandos
-├── main.js         # Conexión WhatsApp
-├── index.js        # Inicio del bot
-├── server.js       # Servidor uptime
-├── config.js       # Configuración global
-├── package.json
-└── README.md
-```
-
-## ⚙️ Requisitos
-
-* **Node.js v18+**
-* **Git**
-* Cuenta de **WhatsApp activa**
-* Termux / VPS / PC
-
-## 📲 Instalación (Termux)
+<a href="https://github.com/YourUsername" target="_blank"> <img src="https://i.imgur.com/Hq6B5EM.png" alt="ORBIT-MD" width="150"/> </a> 
+### 🌺 INSTALACIÓN AUTOMÁTICA POR TERMUX
+```bash
+termux-setup-storage
+````
 
 ```bash
-pkg update -y
-pkg install git nodejs -y
-git clone https://github.com/MVXRVSC/ORBIT-MD.git
-cd ORBIT-MD
-npm install
+apt update -y && yes | apt upgrade && pkg install -y bash wget mpv && wget -O - https://raw.githubusercontent.com/YourUsername/ORBIT-MD/master/install.sh | bash
+```
+
+---
+
+<a href="https://github.com/YourUsername" target="_blank"> <img src="https://i.imgur.com/LZV2FRV.png" alt="ORBIT-MD" width="200"/> </a> 
+
+### 🌹 INSTALACIÓN MANUAL POR TERMUX
+
+> **Ejecuta estos comandos uno por uno:**
+
+```bash
+termux-setup-storage
+apt-get update -y && apt-get upgrade -y
+pkg install -y git nodejs ffmpeg imagemagick yarn
+git clone https://github.com/YourUsername/ORBIT-MD && cd ORBIT-MD
+yarn install && npm install
+npm update
 npm start
 ```
 
-📸 Escanea el **QR** con WhatsApp y listo.
+#### 🌼 PARA REINICIAR EN TERMUX
 
-## 🧪 Comandos Básicos
-
-| Comando  | Descripción        |
-| -------- | ------------------ |
-| `.ping`  | Ver estado del bot |
-| `.menu`  | Mostrar menú       |
-| `.owner` | Info del owner     |
-| `.grupo` | Funciones de grupo |
-
-
-## 👑 Owner & Administración
-
-ORBIT-MD incluye funciones exclusivas para:
-
-* Owner
-* Admins de grupo
-* Control de comandos
-* Modo público / privado
-
-Configuración en `config.js`:
-
-```js
-ownerNumber: ["+535XXXXXXX"]
+```bash
+cd ~/ORBIT-MD && npm start
 ```
 
-## 🛡️ Seguridad & Uso
+---
 
-⚠️ ORBIT-MD **no está afiliado a WhatsApp Inc.**
-⚠️ El uso del bot es **responsabilidad del usuario**
+<a href="https://github.com/YourUsername" target="_blank"> <img src="https://i.imgur.com/yOBuLwg.png" alt="ORBIT-MD" width="150"/> </a> 
+
+### ☘️ ACTUALIZAR EN TERMUX
+
+```bash
+wget -O - https://raw.githubusercontent.com/YourUsername/ORBIT-MD/master/update.sh | bash
+```
+
+> ⚠️ Se realizará respaldo de `database.json` antes de actualizar para no perder tus datos.
+
+---
+
+<a href="https://github.com/YourUsername" target="_blank"> <img src="https://i.imgur.com/IGYKSEp.png" alt="ORBIT-MD" width="150"/> </a> 
+
+### 💐 ACTIVAR 24/7 EN TERMUX
+
+```bash
+npm i -g pm2
+pm2 start server.js --name ORBIT-MD
+pm2 save
+pm2 logs
+```
+
+---
+
+### ☁️ DEPLOY AUTOMÁTICO
+
+* **Replit**: [![Run on Repl.it](https://repl.it/badge/github/AzamiJs/CuriosityBot-MD)](https://repl.it/github/YourUsername/ORBIT-MD)
+* **Koyeb**: [![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=https://github.com/YourUsername/ORBIT-MD&branch=master&name=ORBIT-MD)
+* **Render**: [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://dashboard.render.com/blueprint/new?repo=https%3A%2F%2Fgithub.com%2FYourUsername%2FORBIT-MD)
+* **Heroku**: [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/YourUsername/ORBIT-MD)
+
+#### Heroku Buildpacks recomendados
+
+| BuildPack       | LINK                                                                   |
+| --------------- | ---------------------------------------------------------------------- |
+| **FFMPEG**      | [click](https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest) |
+| **IMAGEMAGICK** | [click](https://github.com/DuckyTeam/heroku-buildpack-imagemagick)     |
+
+---
+
+#### COLABORADORES
+
+<a href="https://github.com/YourUsername/ORBIT-MD/graphs/contributors">
+<img src="https://contrib.rocks/image?repo=YourUsername/ORBIT-MD" /> 
+</a>
+
+### AGRADECIMIENTO ESPECIAL PARA
+
+<a href="https://github.com/AzamiJs"><img src="https://github.com/AzamiJs.png" width="100" height="100" alt="AzamiJs"/></a>
+
+### EDITORA Y PROPIETARIA
+
+<a href="https://github.com/YourUsername"><img src="https://github.com/YourUsername.png" width="100" height="100" alt="YourUsername"/></a>
+
+```
+
+---
+
+### 🔹 Cambios clave respecto al README original:
+
+1. Adaptado a tu **nuevo `server.js`**, ya no usamos `archivo.js`.  
+2. Todo el **menú QR / sesión por número** queda implícito en la instalación y ejecución (`npm start` ejecuta `server.js`).  
+3. Links actualizados a **YourUsername/ORBIT-MD** para personalizarlo.  
+4. Mantiene **instalación automática y manual**, deploy en **Termux, Replit, Koyeb, Render, Heroku**.  
+5. Mantiene estilo visual, badges y advertencias sobre contenido adulto.
+
+---
+
+Si quieres, puedo hacer una **versión final lista para GitHub**, con:
+
+- `server.js` actualizado  
+- `.gitignore` profesional  
+- `Dockerfile` optimizado  
+- `Procfile` correcto  
+- Scripts `install.sh` y `update.sh`  
+- Carpeta `auth/` lista  
+
+Todo **listo para clonar y arrancar sin problemas**.  
+
+¿Quieres que haga esa versión final completa?
+```
 ⚠️ No se garantiza inmunidad ante bloqueos
 
 ## 🛠️ Tecnologías Usadas
