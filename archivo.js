@@ -2,9 +2,12 @@
 import { default as makeWASocket, useMultiFileAuthState, DisconnectReason } from '@adiwajshing/baileys';
 import qrcode from 'qrcode-terminal';
 import readline from 'readline';
-import { NUMERO, BOT_NAME } from './config.js';
-import { handleMessage } from './handler.js';
 
+// Configuración
+const NUMERO = '1234567890'; // Número de WhatsApp vinculado
+const BOT_NAME = 'ORBIT-MD';
+
+// Crear interfaz de menú en Termux
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
@@ -13,7 +16,7 @@ const rl = readline.createInterface({
 console.clear();
 console.log(`\n===== ${BOT_NAME} =====`);
 console.log('1️⃣  Escanear QR para vincular WhatsApp');
-console.log('2️⃣  Usar sesión de número ya vinculado\n');
+console.log('2️⃣  Usar sesión existente de número\n');
 
 rl.question('Selecciona una opción (1 o 2): ', (opcion) => {
     if (opcion === '1') {
@@ -27,6 +30,7 @@ rl.question('Selecciona una opción (1 o 2): ', (opcion) => {
     }
 });
 
+// Función principal del bot
 async function startBot({ modoQR }) {
     rl.close();
     const { state, saveCreds } = await useMultiFileAuthState(`auth/${NUMERO}`);
@@ -36,9 +40,11 @@ async function startBot({ modoQR }) {
         printQRInTerminal: false
     });
 
+    // Eventos de conexión
     client.ev.on('connection.update', (update) => {
         const { connection, lastDisconnect, qr } = update;
 
+        // Mostrar QR solo si la opción es QR
         if (modoQR && qr) {
             console.log('\n🔑 Escanea este QR con WhatsApp:\n');
             qrcode.generate(qr, { small: true });
@@ -56,18 +62,11 @@ async function startBot({ modoQR }) {
                 console.log('🔄 Reconectando...');
                 startBot({ modoQR });
             } else {
-                console.log(`⚠️ Sesión de ${NUMERO} cerrada permanentemente. Escanea QR de nuevo.`);
+                console.log(`⚠️ Sesión de ${NUMERO} cerrada permanentemente. Escanea QR nuevamente.`);
             }
         }
     });
 
-    // Escuchar mensajes
-    client.ev.on('messages.upsert', async (m) => {
-        for (const msg of m.messages) {
-            handleMessage(msg);
-        }
-    });
-
+    // Guardar sesión automáticamente
     client.ev.on('creds.update', saveCreds);
 }
-
