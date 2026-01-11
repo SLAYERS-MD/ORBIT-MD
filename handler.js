@@ -16,6 +16,13 @@ export default async function handler(sock, msg) {
   if (command === "ping") {
     await sock.sendMessage(msg.key.remoteJid, {
       text: "🛰️ ORBIT-MD activo"
+
+      // handler.js
+export async function handleMessage(message) {
+    // Aquí puedes procesar mensajes recibidos
+    console.log('📩 Nuevo mensaje:', message?.message?.conversation || 'Sin texto');
+}
+
     })
   }
 }
