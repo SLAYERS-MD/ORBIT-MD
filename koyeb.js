@@ -1,0 +1,2 @@
+import('./archivo.js');
+
