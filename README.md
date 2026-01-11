@@ -46,10 +46,6 @@ termux-setup-storage
 apt update -y && yes | apt upgrade && pkg install -y bash wget mpv && wget -O - https://raw.githubusercontent.com/YourUsername/ORBIT-MD/master/install.sh | bash
 ```
 
----
-
-<a href="https://github.com/YourUsername" target="_blank"> <img src="https://i.imgur.com/LZV2FRV.png" alt="ORBIT-MD" width="200"/> </a> 
-
 ### 🌹 INSTALACIÓN MANUAL POR TERMUX
 
 > **Ejecuta estos comandos uno por uno:**
@@ -115,44 +111,11 @@ pm2 logs
 
 #### COLABORADORES
 
-<a href="https://github.com/YourUsername/ORBIT-MD/graphs/contributors">
-<img src="https://contrib.rocks/image?repo=YourUsername/ORBIT-MD" /> 
-</a>
-
 ### AGRADECIMIENTO ESPECIAL PARA
-
-<a href="https://github.com/AzamiJs"><img src="https://github.com/AzamiJs.png" width="100" height="100" alt="AzamiJs"/></a>
 
 ### EDITORA Y PROPIETARIA
 
-<a href="https://github.com/YourUsername"><img src="https://github.com/YourUsername.png" width="100" height="100" alt="YourUsername"/></a>
 
-```
-
----
-
-### 🔹 Cambios clave respecto al README original:
-
-1. Adaptado a tu **nuevo `server.js`**, ya no usamos `archivo.js`.  
-2. Todo el **menú QR / sesión por número** queda implícito en la instalación y ejecución (`npm start` ejecuta `server.js`).  
-3. Links actualizados a **YourUsername/ORBIT-MD** para personalizarlo.  
-4. Mantiene **instalación automática y manual**, deploy en **Termux, Replit, Koyeb, Render, Heroku**.  
-5. Mantiene estilo visual, badges y advertencias sobre contenido adulto.
-
----
-
-Si quieres, puedo hacer una **versión final lista para GitHub**, con:
-
-- `server.js` actualizado  
-- `.gitignore` profesional  
-- `Dockerfile` optimizado  
-- `Procfile` correcto  
-- Scripts `install.sh` y `update.sh`  
-- Carpeta `auth/` lista  
-
-Todo **listo para clonar y arrancar sin problemas**.  
-
-¿Quieres que haga esa versión final completa?
 ```
 ⚠️ No se garantiza inmunidad ante bloqueos
 
